@@ -1,0 +1,217 @@
+@import url("https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+}
+
+body{
+    min-height: 100vh;
+    background: url(https://4kwallpapers.com/images/wallpapers/lake-mountains-rocks-twilight-sunset-starry-sky-purple-sky-3440x1440-3768.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 100px;
+    background: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+h1{
+    font-size: 27px;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-weight: 700;
+}
+
+/*Barra de navegacion*/
+
+.navbar{
+    width: 60%;
+    display: block;
+    justify-content: space-between;
+    align-items: center;
+    background-color: transparent;
+    padding-left: 2vw;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+}
+
+.menu-h{
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+}
+
+.menu-h > li:hover{
+    width: auto;
+    height: auto;
+    background: rgba(0,0,0, .5);
+    border-radius: 5px;
+}
+
+.menu-v{
+    position: absolute;
+    display: none;
+    list-style: none;
+    width: auto;
+    height: auto;
+    background-color: rgba(0,0,0, .5);
+    border-radius: 5px;
+}
+
+.menu-h li:hover .menu-v{
+    display: block;
+}
+
+.menu-v li:hover{
+    background-color: rgba(0,0,0, .70);
+    border-radius: 5px;
+}
+
+/*Ventana emergente*/
+
+.modal{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #111111bd;
+    color: #000000;
+    display: flex;
+    opacity: 0;
+    pointer-events: none;
+     transition: opacity .6s;
+     justify-content: center;
+    align-items: center;
+    z-index: 9999; /* Asegurémonos de que la ventana modal esté en la capa superior */
+     
+}
+
+.modal--show{
+    opacity: 1;
+    pointer-events: unset;
+    transition: opacity .6s;
+}
+
+.modal_container{
+    margin: auto;
+    width: 90%;
+    max-width: 600px;
+    max-height: 90%;
+    background-color: #ffffff;
+    border-radius: 6px;
+    padding: 3.5em 2.5em;
+    display: grid;
+    gap: 1em;
+    place-items: center;
+    grid-auto-columns: 100%;
+    grid-auto-columns: 100%;
+    position: relative; /* Añadimos esta línea para asegurarnos de que los estilos relativos funcionen correctamente */
+    z-index: 99999; /* Asegurémonos de que el contenido de la ventana modal esté en la capa superior */
+    margin-top: 15%; /* Movemos solo el contenido de la ventana modal */
+}
+
+.modal_title{
+    font-size: 2.5rem;
+}
+
+.modal_paragraph{
+    margin-bottom: 10px;
+}
+
+.modal_close{
+    text-decoration: none;
+    color: #fff;
+    background-color: #008849;
+    padding: 1em 3em;
+    border: 1px solid;
+    border-radius: 6px;
+    display: inline-block;
+    font-weight: 300;
+    transition: background-color .3s;
+}
+
+.modal_close:hover{
+    color: #008849;
+    background-color: #fff;
+
+}
+
+/*Footer*/
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: transparent;
+    color: #ffffff;
+    text-align: center;
+    padding: 10px 0;
+    z-index: 999;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+/*Formulario de los ejercicios*/
+
+form {
+    width: 300px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    background-color: #f7f7f7;
+    color: #000000;
+    border-radius: 5px;
+    position: relative;
+    left:44%;
+    margin-top: 12%;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+
+textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #b520f0;
+    border: 1px solid #000000;
+    color: rgb(0, 0, 0);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 3%;
+}
+
+button:hover {
+    background-color: #b520f0;
+    color:#ffffff;
+    border: 1px solid #000000;
+}

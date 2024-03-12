@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios JS</title>
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/681/681300.png">
+    <link rel="stylesheet" href="Estilos.css">  
+</head>
+
+<body>
+<header class="header">
+<h1 class="">Ejercicios JS</h1>
+    <nav class="navbar">
+        <ul class="menu-h">
+            <li class="" onclick="mostrarFormulario('operaciones')">Operadores
+                <ul class="menu-v">
+                    <li onclick="mostrarSubFormulario('operaciones', 'area')">Calcular área de un triángulo</li>
+                    <li onclick="mostrarSubFormulario('operaciones', 'suma')">Sumar dos números</li>
+                    <li onclick="mostrarSubFormulario('operaciones', 'elevar')">Elevar un número al cuadrado</li>
+                    <li onclick="mostrarSubFormulario('operaciones', 'conversion')">Pasar de euros a dólares</li>
+                    <li onclick="mostrarSubFormulario('operaciones', 'perimetro')">Área y perímetro de un cuadrado</li>
+                    <li onclick="mostrarSubFormulario('operaciones', 'cilindro')">Área y volumen de un cilindro</li>
+                    <li onclick="mostrarSubFormulario('operaciones', 'circunferencia')">Longitud y radio de una circunferencia</li>
+                    <li onclick="mostrarSubFormulario('operaciones', 'promedio')">Calcular el promedio de 3 números</li>
+                </ul>
+            </li>
+            <li onclick="mostrarFormulario('condicionales')">Condicionales
+                <ul class="menu-v">
+                    <li onclick="mostrarSubFormulario('condicionales', 'positivo_negativo')">Saber si un número es postivo o negativo</li>
+                    <li onclick="mostrarSubFormulario('condicionales', 'mayor_menor')">Saber cual número es mayor o menor </li>
+                    <li onclick="mostrarSubFormulario('condicionales', 'mayor_menor_tres')">Calcular e imprimir el mayor y el menor</li>
+                    <li onclick="mostrarSubFormulario('condicionales', 'sumar_restar')">Sumar dos números si A es menor que B o sino restarlos</li>
+                </ul>
+            </li>
+            <li onclick="mostrarFormulario('ciclos')">Ciclos</li>
+            <li onclick="mostrarFormulario('arreglos')">Arreglos</li> 
+        </ul>
+    </nav>
+</header>
+
+<main>
+
+    <script src="ejerciciosOp.js"></script> <!--Enlace al script-->
+
+    <!--N1-OP-->
+    <section id="area" class="sub-container" style="display:none;">
+        <form>
+            <label for="base">Ingrese la base del triángulo:</label>
+            <input type="text" id="base" name="base" placeholder="Ingrese la base">
+    
+            <label for="altura">Ingrese la altura del triángulo:</label>
+            <input type="text" id="altura" name="altura" placeholder="Ingrese la altura">
+            <button type="button" class="calcular" data-ejercicio="area" onclick="obtenerArea()">Calcular</button>
+        </form>
+    </section>
+
+    <!--N2-OP-->
+    <section id="suma" class="sub-container" style="display:none;">
+        <form>
+            <label for="numero1">Ingrese el primer número:</label>
+            <input type="number" id="numero1" name="numero1" placeholder="Ingrese el primer número">
+    
+            <label for="numero2">Ingrese el segundo número:</label>
+            <input type="number" id="numero2" name="numero2" placeholder="Ingrese el segundo número">
+            <button type="button" class="calcular" data-ejercicio="sumar" onclick="sumarNumeros()">Calcular</button>
+        </form>
+    </section>
+
+    <!--N3-OP-->
+    <section id="elevar" class="sub-container" style="display:none;">
+        <form>
+            <label for="numeroC">Ingrese un número:</label>
+            <input type="number" id="numeroC" name="numeroC" placeholder="Ingrese un número">
+            <button type="button" class="calcular" data-ejercicio="elevar" onclick="obetnerElevado()">Calcular</button>
+        </form>
+    </section>
+
+    <!--N4-OP-->
+    <section id="conversion" class="sub-container" style="display:none;">
+        <form>
+            <label for="cantidad">Ingrese la cantidad en euros:</label>
+            <input type="number" id="cantidad" name="cantidad" placeholder="Ingrese la cantidad en euros">
+            <button type="button" class="calcular" data-ejercicio="conversion" onclick="obetenerConversion()">Convertir</button>
+        </form>
+    </section>
+
+    <!--N5-OP-->
+<section id="perimetro" class="sub-container" style="display:none;">
+    <form>
+        <label for="lado">Ingrese el lado del cuadrado:</label>
+        <input type="number" id="lado" name="lado" placeholder="Ingrese el lado del cuadrado">
+        <button type="button" class="calcular" data-ejercicio="perimetro" onclick="obetenerPerimetroCuadrado()">Calcular</button>
+    </form>
+</section>
+
+    <!--N6-OP-->
+    <section id="cilindro" class="sub-container" style="display:none;">
+        <form>
+            <label for="radio">Ingrese el radio de la base:</label>
+            <input type="number" id="radio" name="radio" placeholder="Ingrese el radio de la base">
+    
+            <label for="altura">Ingrese la altura del cilindro:</label>
+            <input type="number" id="altura" name="altura" placeholder="Ingrese la altura del cilindro">
+
+            <button type="button" class="calcular" data-ejercicio="cilindro" onclick="obetenerCilindro()">Calcular</button>
+        </form>
+    </section>
+
+    <!--N7-OP-->
+    <section id="circunferencia" class="sub-container" style="display:none;">
+        <form>
+            <label for="radioCircunferencia">Ingrese el radio de la circunferencia:</label>
+            <input type="number" id="radioCircunferencia" name="radioCircunferencia" placeholder="Ingrese el radio de la circunferencia">
+    
+            <button type="button" class="calcular" data-ejercicio="circunferencia" onclick="obtenerCircunferencia()">Calcular</button>
+        </form>
+    </section>
+    
+    <!--N8-OP-->
+    <section id="promedio" class="sub-container" style="display:none;">
+        <form>
+            <label for="numerop1">Ingrese el primer número:</label>
+            <input type="number" id="numerop1" name="numerop1" placeholder="Ingrese el primer número">
+    
+            <label for="numerop2">Ingrese el segundo número:</label>
+            <input type="number" id="numerop2" name="numerop2" placeholder="Ingrese el segundo número">
+    
+            <label for="numerop3">Ingrese el tercer número:</label>
+            <input type="number" id="numerop3" name="numerop3" placeholder="Ingrese el tercer número">
+    
+            <button type="button" class="calcular" data-ejercicio="promedio" onclick="obetenerPromedio()">Calcular</button>
+        </form>
+    </section>
+
+    <!--Formularios de Condicionales-->
+    <script src=""></script>
+    <!--Primer Ejercicio-->
+    <section id="positivo_negativo" class="sub-container" style="display:none;">
+        <form>
+            <label for="numerop_n">Ingrese un número:</label>
+            <input type="text" id="numerop_n" name="numerop_n" placeholder="Ingrese un numero">
+            <button type="button" class="calcular" data-ejercicio="positivo_negativo" onclick="determinarPositivoNegativo()">Calcular</button>
+        </form>
+    </section>
+
+    <!--Segundo ejercicio-->
+    <section id="mayor_menor" class="sub-container" style="display:none;">
+        <form>
+            <label for="numerom_n">Ingrese el primer número:</label>
+            <input type="number" id="numerom_n" name="numerom_n" placeholder="Ingrese el primer número">
+    
+            <label for="numerom_n2">Ingrese el segundo número:</label>
+            <input type="number" id="numerom_n2" name="numerom_n2" placeholder="Ingrese el segundo número">
+            <button type="button" class="calcular" data-ejercicio="mayor_menor" onclick="determinarMayorMenor()">Calcular</button>
+        </form>
+    </section>
+
+    <!--Tercer ejercicio-->
+    <section id="mayor_menor_tres" class="sub-container" style="display:none;">
+        <form>
+            <label for="numerop_m_n">Ingrese el primer número:</label>
+            <input type="number" id="numerop_m_n" name="numerop_m_n" placeholder="Ingrese el primer número">
+
+            <label for="numerop_m_n2">Ingrese el segundo número:</label>
+            <input type="number" id="numerop_m_n2" name="numerop_m_n2" placeholder="Ingrese el segundo número">
+
+            <label for="numerop_m_n3">Ingrese el tercer número:</label>
+            <input type="number" id="numerop_m_n3" name="numerop_m_n3" placeholder="Ingrese el tercer número">
+            <button type="button" class="calcular" data-ejercicio="mayor_menor_tres" onclick="determinarMayorMenorTres()">Calcular</button>
+        </form>
+    </section>
+
+    <!--Cuarto ejercicio-->
+    <section id="sumar_restar" class="sub-container" style="display:none;">
+        <form>
+            <label for="numeroA">Ingrese el primer numero: </label>
+            <input type="number" id="numeroA" name="numeroA" placeholder="Ingrese el primer numero">
+
+            <label for="numeroB">Ingrese el segundo numero: </label>
+            <input type="number" id="numeroB" name="numeroB" placeholder="Ingrese el segundo numero">
+            <button type="button" class="calcular" data-ejercicio="sumar_restar" onclick="sumarRestar()">Calcular</button>
+        </form>
+    </section>
+
+    <!-- Ventana emergente -->
+    <section id="modal" class="modal" style="display:none;">
+        <div class="modal_container">
+            <h2 class="modal_title">Resultado</h2>
+            <p id="resultado" class="modal_paragraph"></p>
+        </div>
+    </section>
+
+
+</main>
+<footer class="footer">
+    <div class="footer-content">
+        <h3>NRL 2902082</h3>
+    </div>
+<!--script JavaScript -->
+<script src="script.js"></script>
+<script src="main.js"></script>
+
+</body>
+
+</footer>
+</html>
